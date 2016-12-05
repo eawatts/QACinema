@@ -21,6 +21,10 @@ body{
 }
 .footer-section a:hover{
 	color: white;
+	transition: 0.5s;
+}
+.phone{
+	margin-left: 30%;
 }
 .footer-nav-left{
 	text-align: right;
@@ -50,7 +54,7 @@ body{
 }
 .foot-book{
 	margin: 0px;
-	margin-left:40%;
+	margin-left:35%;
 	text-align: center;
 	font-size: 170%;
 }

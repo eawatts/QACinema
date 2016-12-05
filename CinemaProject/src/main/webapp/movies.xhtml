@@ -1,0 +1,27 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+
+	<ui:define name="custom-css">
+		<link rel="stylesheet" type="text/css" href="css/index.css"></link>
+	</ui:define>
+
+	<ui:define name="title">Welcome</ui:define>
+
+	<ui:define name="main-content">
+		<div class="row">
+			<div class="col-tab-12 col-desk-12">
+				<ui:repeat var="movie" value="#{movies.movies}">
+					<h:outputText value="#{movie.id}"></h:outputText>
+					<h:outputText value="#{movie.name}"></h:outputText>
+					<h:outputText value="#{movie.discontinued}"></h:outputText>
+				</ui:repeat>
+			</div>
+		</div>
+	</ui:define>
+
+	<ui:define name="custom-scripts">
+	</ui:define>
+
+</ui:composition>
