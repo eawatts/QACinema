@@ -1,0 +1,23 @@
+html{
+	margin:0px;
+}
+body{
+    margin:auto;
+    height:100%;
+}
+.footer-section{
+	background-color: orange;
+	padding-top: 5px;
+	color: #1b96fe;	
+}
+#logo{
+	height: 50px;
+	width:50px;
+}
+.nav-bar{
+	background-color: orange;
+	padding-top: 15px;
+}
+.nav-right{
+	text-decoration: none;
+}
