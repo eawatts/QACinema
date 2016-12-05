@@ -13,6 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="css/responsive.css"></link>
 		<link rel="stylesheet" type="text/css"
 			href="css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"></link>
+		<link rel="stylesheet" type="text/css"
+			href="//fonts.googleapis.com/css?family=Abel" />
 		<ui:insert name="custom-css" />
 	</h:head>
 
@@ -23,29 +25,32 @@
 				<nav class="nav-bar">
 					<div class="row">
 						<div class="col-tab-3 col-desk-3">
-							<h:graphicImage id="logo"
-								value="Resources/images/qa_cinema_logo.png"></h:graphicImage>
+							<a href="index.xhtml"><h:graphicImage class="logo"
+									value="Resources/images/qa_cinema_logo.png" /></a>
 						</div>
-						<div class="col-tab-6 col-desk-6">
+						<div class="col-tab-7 col-desk-7">
 							<h:inputText type="search" value="Enter search here..."></h:inputText>
-							<button value="Search"><i class="fa fa-search" aria-hidden="true"></i></button>
+							<button value="Search">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</button>
 						</div>
-						<div>
-							<div class="col-tab-1 col-desk-1">
+						<div class="nav-right">
+							<h:panelGroup layout="block"
+								rendered="#{current_session.loggedIn eq true}">
+								<div class="col-tab-1 col-desk-1">
+									<a class="nav-link" href="account.xhtml">My Account</a>
+								</div>
 								<h:form>
-									<h:commandLink styleClass="nav-right">Login</h:commandLink>
+									<h:commandLink styleClass="nav-right nav-link" value="Logout" action="#{login.logout}"></h:commandLink>
 								</h:form>
-							</div>
-							<div class="col-tab-1 col-desk-1">
-								<h:form>
-									<h:commandLink styleClass="nav-right">Sign Up</h:commandLink>
-								</h:form>
-							</div>
-							<div class="col-tab-1 col-desk-1">
-								<h:form>
-									<h:commandLink styleClass="nav-right">My Account</h:commandLink>
-								</h:form>
-							</div>
+							</h:panelGroup>
+							<h:panelGroup layout="block"
+								rendered="#{current_session.loggedIn ne true}">
+								<div class="col-tab-2 col-desk-2">
+									<a href="login.xhtml" class="nav-link">Login</a>
+								</div>
+
+							</h:panelGroup>
 						</div>
 					</div>
 				</nav>
@@ -62,15 +67,27 @@
 			<footer>
 				<div class="footer-section">
 					<div class="row">
-						<div class="col-tab-6 col-desk-6">
-							<a><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+						<div class="col-tab-6 col-desk-6 footer-left">
+							<a href="https://www.facebook.com"><i
+								class="fa fa-facebook-square" aria-hidden="true"></i></a>
 						</div>
-						<div class="col-tab-6 col-desk-6">EW Design</div>
-						<hr />
+						<div class="col-tab-6 col-desk-6 footer-right">
+							<i class="fa fa-copyright" aria-hidden="true"></i> EW Design 2016
+						</div>
+					</div>
+					<hr class="footer-rule" />
+					<div class="row">
+						<div class="col-tab-12 col-desk-12">
+							<a href="index.xhtml">Home<br /></a> <a href="about.xhtml">About
+								Us<br />
+							</a> <a href="help.xhtml">Help<br />
+							</a> <a href="contact.xhtml">Contact Us<br /></a>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-tab-12 col-desk-12">
-							<p class="foot">Home<br /> </p>About Us<br /> Help<br /> Contact Us<br />
+							<a href="index.xhtml"><h:graphicImage class="logo foot-logo"
+									value="Resources/images/qa_cinema_logo.png" /></a>
 						</div>
 					</div>
 				</div>
