@@ -14,6 +14,7 @@ body{
 }
 .footer-section a{
 	text-decoration: none;
+	color: #1b96fe;
 }
 .footer-section a:visited{
 	color: #1b96fe;
@@ -41,9 +42,39 @@ body{
 	margin-right: auto;
 	margin-bottom: 20px;
 }
+.foot-book{
+	margin: 0px;
+	margin-left:40%;
+	text-align: center;
+	font-size: 170%;
+}
+.number{
+	margin-bottom: 5px;
+}
+.foot-book-number{
+	color:white;
+}
 .logo{
 	height: 50px;
 	width:50px;
+	margin-bottom: 10px;
+}
+.search{
+	padding-top:20px;
+	text-align: center;
+}
+.search-box{
+	border-radius: 2px;
+	border: none;
+	border: 2px solid #1b96fe;
+	width: 30%;
+}
+.search-btn{
+	color: #1b96fe;
+	border-radius: 2px;
+	border: none;
+	border: 2px solid #1b96fe;
+	background-color: white;
 }
 .nav-link{
 	font-size: 120%;
@@ -55,6 +86,7 @@ body{
 .nav-right{	
 	font-weight: bold;
 	color: #1b96fe;	
+	padding-top:20px;
 }
 .nav-right a:link{
 	text-decoration: none;

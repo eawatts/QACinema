@@ -24,25 +24,31 @@
 			<header>
 				<nav class="nav-bar">
 					<div class="row">
-						<div class="col-tab-3 col-desk-3">
+						<div class="col-tab-2 col-desk-2">
 							<a href="index.xhtml"><h:graphicImage class="logo"
 									value="Resources/images/qa_cinema_logo.png" /></a>
 						</div>
-						<div class="col-tab-7 col-desk-7">
-							<h:inputText type="search" value="Enter search here..."></h:inputText>
-							<button value="Search">
-								<i class="fa fa-search" aria-hidden="true"></i>
-							</button>
+						<div class="col-tab-8 col-desk-8">
+							<div class="search">
+								<h:inputText type="search" styleClass="search-box"
+									value="Enter search here..."></h:inputText>
+								<button class="search-btn" value="Search">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</button>
+							</div>
 						</div>
 						<div class="nav-right">
 							<h:panelGroup layout="block"
 								rendered="#{current_session.loggedIn eq true}">
 								<div class="col-tab-1 col-desk-1">
-									<a class="nav-link" href="account.xhtml">My Account</a>
+									<a class="nav-link" href="account.xhtml">Account</a>
 								</div>
-								<h:form>
-									<h:commandLink styleClass="nav-right nav-link" value="Logout" action="#{login.logout}"></h:commandLink>
-								</h:form>
+								<div class="col-tab-1 col-desk-1">
+									<h:form>
+										<h:commandLink styleClass="nav-right nav-link" value="Logout"
+											action="#{login.logout}"></h:commandLink>
+									</h:form>
+								</div>
 							</h:panelGroup>
 							<h:panelGroup layout="block"
 								rendered="#{current_session.loggedIn ne true}">
@@ -69,9 +75,19 @@
 						<div class="col-tab-6 col-desk-6 footer-left">
 							<a href="https://www.facebook.com"><i
 								class="fa fa-facebook-square" aria-hidden="true"></i></a>
+								<a href="https://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 						</div>
 						<div class="col-tab-6 col-desk-6 footer-right">
 							<i class="fa fa-copyright" aria-hidden="true"></i> EW Design 2016
+						</div>
+					</div>
+					<hr class="footer-rule" />
+					<div class="row">
+						<div class="col-tab-12 col-desk-12 number">
+							<span  class="foot-book">
+								<span>24 Hour Booking Line &#160;</span>
+								<span class="foot-book-number">123456789</span>
+							</span>
 						</div>
 					</div>
 					<hr class="footer-rule" />
@@ -85,8 +101,8 @@
 					</div>
 					<div class="row">
 						<div class="col-tab-12 col-desk-12">
-							<a href="index.xhtml"><h:graphicImage class="logo foot-logo"
-									value="Resources/images/qa_cinema_logo.png" /></a>
+							<h:graphicImage class="logo foot-logo"
+									value="Resources/images/qa_cinema_logo.png" />
 						</div>
 					</div>
 				</div>
