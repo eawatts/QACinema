@@ -27,6 +27,7 @@ public class OfflineDB {
 	private void setupMovies() {
 		movies = new ArrayList<Movie>();
 		movies.add(new Movie(1, "Bugs Life", false));
+		movies.add(new Movie(2, "Star Wars", false));
 	}
 	
 	private void setupUsers(){
