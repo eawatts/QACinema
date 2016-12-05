@@ -22,6 +22,12 @@ body{
 .footer-section a:hover{
 	color: white;
 }
+.footer-nav-left{
+	text-align: right;
+}
+.footer-nav-right{
+	text-align: left;
+}
 .footer-right{
 	text-align: right;
 	font-weight: bold;
