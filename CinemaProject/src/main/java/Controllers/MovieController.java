@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import Persistence.Entities.Movie;
+import Persistence.webentities.CurrentMovie;
 import Services.MovieService;
 
 @Named("movies")
@@ -19,7 +20,19 @@ public class MovieController implements Serializable{
 	@Inject
 	private MovieService movieService;
 	
+	@Inject
+	private CurrentMovie currentMovie;
+	
+	public String view(int movieId){
+		currentMovie.setCurrentMovie(movieService.getCurrentMovieFromId(movieId));
+		return "movie";
+	}
+	
 	public List<Movie> getMovies(){
 		return movieService.getAllMovies();
+	}
+	
+	public List<Movie> getActiveMovies(){
+		return movieService.getActiveMovies();
 	}
 }

@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import Persistence.Entities.Movie;
 import Persistence.Offline.database.OfflineDB;
 import Persistence.Repositories.interfaces.MovieRepository;
+import Persistence.webentities.CurrentMovie;
 
 @Stateless
 @Default
@@ -22,6 +23,11 @@ public class MovieRepositoryOffline implements MovieRepository{
 	@Override
 	public List<Movie> getMovies(){
 		return db.getMovies();
+	}
+
+	@Override
+	public CurrentMovie getCurrentMovieFromId(int movieId) {
+		return db.getCurrentMovie(movieId);
 	}
 
 }

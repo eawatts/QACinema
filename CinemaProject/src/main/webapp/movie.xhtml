@@ -12,22 +12,7 @@
 	<ui:define name="main-content">
 		<div class="row">
 			<div class="col-tab-12 col-desk-12">
-				<H1>Index</H1>
-				<div class="row">
-					<ui:repeat var="movie" value="#{movies.activeMovies}">
-						<h:form>
-							<div class="col-tab-12 col-desk-4">
-								<div class="row">
-									<div class="col-tab-12 col-desk-12">Image</div>
-									<div class="col-tab-12 col-desk-12">
-										<h:commandLink value="#{movie.name}"
-											action="#{movies.view(movie.id)}"></h:commandLink>
-									</div>
-								</div>
-							</div>
-						</h:form>
-					</ui:repeat>
-				</div>
+				<h:outputText value="#{current_movie.movie.name}"></h:outputText>
 			</div>
 		</div>
 	</ui:define>
