@@ -18,11 +18,13 @@
 					<ul class="slides">
 						<ui:repeat var="movie" value="#{movies.activeMovies}">
 							<li><h:form>
-									<h:graphicImage styleClass="slider-image"
-										value="Resources#{movie.movie_banner_filepath}"></h:graphicImage>
 									<p class="flex-caption">
-										<h:commandLink value="#{movie.name}" styleClass="caption-link"
-											action="#{movies.view(movie.id)}"></h:commandLink>
+										<h:commandLink value="&#160;&#160;#{movie.name}" styleClass="caption-link"
+											action="#{movies.view(movie.id)}"><br/><br/>
+											<h:graphicImage styleClass="slider-image"
+												value="Resources#{movie.movie_banner_filepath}"></h:graphicImage>
+
+										</h:commandLink>
 									</p>
 								</h:form></li>
 						</ui:repeat>
@@ -31,7 +33,7 @@
 			</div>
 			<div class="row">
 				<div class="col-tab-12 col-desk-12">
-					<H1>What's on?</H1>
+					<H1 id="title">What's on?</H1>
 				</div>
 			</div>
 		</div>
