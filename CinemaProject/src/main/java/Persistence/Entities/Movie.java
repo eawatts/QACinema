@@ -14,6 +14,9 @@ public class Movie {
 	@Column(name="name", nullable = false, length = 100)
 	private String name;
 	
+	@Column(name="description", nullable = false, length = 500)
+	private String description;
+	
 	@Column(name="is_discontinued", nullable = false)
 	private boolean isDiscontinued;
 	
@@ -31,10 +34,11 @@ public class Movie {
 
 	public Movie(){};
 	
-	public Movie(int id, String name, boolean isDiscontinued, String movie_poster_filepath,
+	public Movie(int id, String name, String description, boolean isDiscontinued, String movie_poster_filepath,
 			String movie_banner_filepath, String movie_trailer_path, Integer age_rating){
 		this.id=id;
 		this.name=name;
+		this.description = description;
 		this.isDiscontinued=isDiscontinued;
 		this.movie_poster_filepath = movie_poster_filepath;
 		this.movie_banner_filepath = movie_banner_filepath;
@@ -56,6 +60,14 @@ public class Movie {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public boolean isDiscontinued() {

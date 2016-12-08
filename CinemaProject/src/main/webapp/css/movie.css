@@ -1,6 +1,98 @@
-.rating{
-	height: auto; 
-    width: auto; 
-    max-width: 30px; 
-    max-height: 30px;
+.rating {
+	height: auto;
+	width: auto;
+	max-width: 30px;
+	max-height: 30px;
+}
+.top-row{
+	padding:0px;
+}
+.page_image {
+	height: auto;
+	width: auto;
+	max-width: 1350px;
+	max-height: 400px;
+	z-index: -1;
+}
+#overlay{
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,1));
+	min-width:100px;
+	min-height:100px;
+	position: absolute;
+	bottom: 4px;
+    left: 0;
+    top:0;
+    right:0;
+}
+.top-row-left{
+	position: relative;
+}
+.top-row-right {
+	position: relative;
+	background-color: black;
+	color: white;
+	font-size:200%;
+	min-height: 400px;
+}
+.movie-desc{
+	font-size: 70%;
+}
+.show-time{
+	text-align: center;
+	font-size: 120%;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #1b96fe;
+	border-width: 2px;
+	border-radius: 2px;
+	margin: 5px;
+}
+.show-day{
+	font-size: 120%;
+	font-weight: bold;	
+}
+.time-button{
+	width:100%;
+	background-color: orange;
+}
+button.accordian {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordian.active, button.accordian:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+}
+button.accordian:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordian.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }

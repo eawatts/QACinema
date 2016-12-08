@@ -11,9 +11,18 @@
 
 	<ui:define name="main-content">
 		<div class="row">
-			<div class="col-tab-12 col-desk-12">
-				<h:outputText value="#{current_movie.movie.name}"></h:outputText>
-
+			<div class="col-tab-6 col-desk-6 top-row">
+				<div class="top-row-left">
+					<h:graphicImage styleClass="page_image"
+						value="Resources#{current_movie.movie.movie_banner_filepath}"></h:graphicImage>
+					<div id="overlay"></div>
+				</div>
+			</div>
+			<div class="col-tab-6 col-desk-6 top-row-right">
+				<br />
+				<h:outputText styleClass="movie-name"
+					value="#{current_movie.movie.name}"></h:outputText>
+				<br />
 				<h:panelGroup rendered="#{current_movie.movie.age_rating eq 1}">
 					<h:graphicImage styleClass="rating"
 						value="Resources/images/age_rating/universal.png"></h:graphicImage>
@@ -37,24 +46,59 @@
 				<h:panelGroup rendered="#{current_movie.movie.age_rating eq null}">
 					<h:outputText value="To be rated"></h:outputText>
 				</h:panelGroup>
+				<br />
+				<h:outputText styleClass="movie-desc"
+					value="#{current_movie.movie.description}"></h:outputText>
 			</div>
-			<h:panelGroup
-				rendered="#{current_movie.movie.movie_trailer_path ne null}">
+		</div>
+		<div class="row">
+			<div class="col-tab-12 col-desk-4">
+				<h:panelGroup
+					rendered="#{current_movie.movie.movie_trailer_path ne null}">
+					<iframe width="420" height="315"
+						src="#{current_movie.movie.movie_trailer_path}"> </iframe>
+				</h:panelGroup>
+				<h:panelGroup
+					rendered="#{current_movie.movie.movie_trailer_path eq null}">
+					<h:outputText value="No trailer currently available"></h:outputText>
+				</h:panelGroup>
+			</div>
+			<div class="col-tab-12 col-desk-8">
 				<div class="row">
 					<div class="col-tab-12 col-desk-12">
-						<iframe width="420" height="315"
-							src="#{current_movie.movie.movie_trailer_path}"> </iframe>
+						<ui:repeat var="today" value="#{current_movie.todayShowing}">
+							<div class="col-tab-4 col-desk-4">
+								<h:outputText styleClass="show-day"
+									value="Showing for today:&#160;#{today.day}"></h:outputText>
+							</div>
+							<div class="col-tab-8 col-desk-8">
+								<ui:repeat var="time" value="#{today.times}">
+									<h:outputText styleClass="show-time"
+										value="#{time}&#160;&#160;"></h:outputText>
+								</ui:repeat>
+								<br /> <br />
+							</div>
+							<br />
+						</ui:repeat>
+						<button class="accordian">VIEW ALL TIMES</button>
+						<div class="panel">
+							<div class="row">
+								<ui:repeat var="showing" value="#{current_movie.showings}">
+									<div class="col-tab-2 col-desk-2">
+										<h:outputText value="#{showing.day}"></h:outputText>
+									</div>
+									<div class="col-tab-10 col-desk-10">
+										<ui:repeat var="time" value="#{showing.times}">
+											<h:outputText value="#{time}&#160;&#160;"></h:outputText>
+										</ui:repeat>
+									</div>
+									<br />
+								</ui:repeat>
+							</div>
+						</div>
 					</div>
 				</div>
-			</h:panelGroup>
-			<h:panelGroup
-				rendered="#{current_movie.movie.movie_trailer_path eq null}">
-				<div class="row">
-					<div class="col-tab-12 col-desk-12">
-						<h:outputText value="No trailer currently available"></h:outputText>
-					</div>
-				</div>
-			</h:panelGroup>
+			</div>
 		</div>
 	</ui:define>
 
