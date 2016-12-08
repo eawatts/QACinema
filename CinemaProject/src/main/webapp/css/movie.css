@@ -92,7 +92,6 @@ button.accordian:after {
     float: right;
     margin-left: 5px;
 }
-
 button.accordian.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
