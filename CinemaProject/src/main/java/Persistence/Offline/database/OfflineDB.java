@@ -30,10 +30,10 @@ public class OfflineDB {
 
 	private void setupMovies() {
 		movies = new ArrayList<Movie>();
-		movies.add(new Movie(1, "Bugs Life", false));
-		movies.add(new Movie(2, "Star Wars", false));
-		movies.add(new Movie(3, "Step up", true));
-		movies.add(new Movie(4, "Batman", false));
+		movies.add(new Movie(1, "Bugs Life", false, "/images/movie_poster/abl_p.jpg",  "/images/bugs_life_banner_fit.jpg", null));
+		movies.add(new Movie(2, "Star Wars", false, "/images/movie_poster/sw_p.jpg", "/images/star_wars_banner_fit.jpg",  "https://www.youtube.com/embed/sGbxmsDFVnE"));
+		movies.add(new Movie(3, "Step up", true, "/images/movie_poster/su_p.jpg",  "/images/star_wars_banner_fit.jpg", null));
+		movies.add(new Movie(4, "Batman", false, "/images/movie_poster/bm_p.jpg",  "/images/batman_banner_fit.jpg", null));
 	}
 
 	private void setupUsers(){

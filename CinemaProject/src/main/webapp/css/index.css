@@ -1,0 +1,85 @@
+.index-image{
+	transition: max-width 0.5s ease;
+	transition: max-height 0.5s ease;
+	height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    display: block;
+    margin: 0 auto;
+}
+.index-text{
+	color: black;
+	text-align: center;
+	font-size: 120%;
+	text-decoration: none;
+}
+.slider-image{
+	height: auto; 
+    width: auto; 
+    max-width: 1400px; 
+    max-height: 400px;
+}
+.index-image:hover{
+	max-width: 350px; 
+    max-height: 350px;
+}
+.carousel_row{
+	padding-left:0px;
+	padding-right:0px;
+}
+.flexslider{
+	border:0px;
+}
+.flex-direction-nav a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    text-align: center;
+}
+.flex-direction-nav a:before {
+    font-family: "flexslider-icon";
+    font-size: 20px;
+    display: inline-block;
+    content: '\f001';
+    color: #FFF;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    line-height: 40px;
+}
+.flex-direction-nav .flex-next {
+    right: -50px;
+    text-align: center;
+}
+.flex-caption {
+  width: 100%;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  font-size: 120%;
+  line-height: 18px;
+  margin: 0px;
+}
+.caption-link{
+	text-decoration: none;
+	color: white;
+}

@@ -4,6 +4,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
 
 	<ui:define name="custom-css">
+		<link rel="stylesheet" href="slider/slider/flexslider.css"
+			type="text/css"></link>
 		<link rel="stylesheet" type="text/css" href="css/index.css"></link>
 	</ui:define>
 
@@ -11,17 +13,45 @@
 
 	<ui:define name="main-content">
 		<div class="row">
+			<div class="col-tab-12 col-desk-12 carousel_row">
+				<div class="flexslider">
+					<ul class="slides">
+						<ui:repeat var="movie" value="#{movies.activeMovies}">
+							<li><h:form>
+									<h:graphicImage styleClass="slider-image"
+										value="Resources#{movie.movie_banner_filepath}"></h:graphicImage>
+									<p class="flex-caption">
+										<h:commandLink value="#{movie.name}" styleClass="caption-link"
+											action="#{movies.view(movie.id)}"></h:commandLink>
+									</p>
+								</h:form></li>
+						</ui:repeat>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-tab-12 col-desk-12">
+					<H1>What's on?</H1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-tab-12 col-desk-12">
-				<H1>Index</H1>
 				<div class="row">
 					<ui:repeat var="movie" value="#{movies.activeMovies}">
 						<h:form>
 							<div class="col-tab-12 col-desk-4">
 								<div class="row">
-									<div class="col-tab-12 col-desk-12">Image</div>
 									<div class="col-tab-12 col-desk-12">
-										<h:commandLink value="#{movie.name}"
-											action="#{movies.view(movie.id)}"></h:commandLink>
+										<h:commandLink action="#{movies.view(movie.id)}">
+											<h:graphicImage styleClass="index-image"
+												value="Resources#{movie.movie_poster_filepath}">
+											</h:graphicImage>
+											<br />
+											<div class="index-text">
+												<h:outputText value="#{movie.name}"></h:outputText>
+											</div>
+										</h:commandLink>
 									</div>
 								</div>
 							</div>
@@ -33,6 +63,10 @@
 	</ui:define>
 
 	<ui:define name="custom-scripts">
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="slider/slider/jquery.flexslider.js"></script>
+		<script src="js/slider_start.js"></script>
 	</ui:define>
 
 </ui:composition>
