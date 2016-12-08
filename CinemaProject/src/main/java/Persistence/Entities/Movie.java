@@ -25,16 +25,21 @@ public class Movie {
 	
 	@Column(name = "movie_trailer_path", nullable=false)
 	private String movie_trailer_path;
+	
+	@Column(name = "age_rating", nullable=false)
+	private Integer age_rating;
 
 	public Movie(){};
 	
-	public Movie(int id, String name, boolean isDiscontinued, String movie_poster_filepath, String movie_banner_filepath, String movie_trailer_path){
+	public Movie(int id, String name, boolean isDiscontinued, String movie_poster_filepath,
+			String movie_banner_filepath, String movie_trailer_path, Integer age_rating){
 		this.id=id;
 		this.name=name;
 		this.isDiscontinued=isDiscontinued;
 		this.movie_poster_filepath = movie_poster_filepath;
 		this.movie_banner_filepath = movie_banner_filepath;
 		this.movie_trailer_path = movie_trailer_path;
+		this.age_rating = age_rating;
 	}
 
 	public int getId() {
@@ -83,6 +88,14 @@ public class Movie {
 
 	public void setMovie_trailer_path(String movie_trailer_path) {
 		this.movie_trailer_path = movie_trailer_path;
+	}
+
+	public Integer getAge_rating() {
+		return age_rating;
+	}
+
+	public void setAge_rating(Integer age_rating) {
+		this.age_rating = age_rating;
 	}
 	
 }

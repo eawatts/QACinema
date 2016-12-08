@@ -4,7 +4,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
 
 	<ui:define name="custom-css">
-		<link rel="stylesheet" type="text/css" href="css/index.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/movie.css"></link>
 	</ui:define>
 
 	<ui:define name="title">Welcome</ui:define>
@@ -13,21 +13,47 @@
 		<div class="row">
 			<div class="col-tab-12 col-desk-12">
 				<h:outputText value="#{current_movie.movie.name}"></h:outputText>
+
+				<h:panelGroup rendered="#{current_movie.movie.age_rating eq 1}">
+					<h:graphicImage styleClass="rating"
+						value="Resources/images/age_rating/universal.png"></h:graphicImage>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{current_movie.movie.age_rating eq 2}">
+					<h:graphicImage styleClass="rating"
+						value="Resources/images/age_rating/pg.png"></h:graphicImage>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{current_movie.movie.age_rating eq 3}">
+					<h:graphicImage styleClass="rating"
+						value="Resources/images/age_rating/twelve.png"></h:graphicImage>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{current_movie.movie.age_rating eq 4}">
+					<h:graphicImage styleClass="rating"
+						value="Resources/images/age_rating/fifteen.png"></h:graphicImage>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{current_movie.movie.age_rating eq 5}">
+					<h:graphicImage styleClass="rating"
+						value="Resources/images/age_rating/eighteen.png"></h:graphicImage>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{current_movie.movie.age_rating eq null}">
+					<h:outputText value="To be rated"></h:outputText>
+				</h:panelGroup>
 			</div>
-			<h:panelGroup rendered="#{current_movie.movie.movie_trailer_path ne null}">
-			<div class="row">
-				<div class="col-tab-12 col-desk-12">
-					<iframe width="420" height="315"
-						src="#{current_movie.movie.movie_trailer_path}"> </iframe>
+			<h:panelGroup
+				rendered="#{current_movie.movie.movie_trailer_path ne null}">
+				<div class="row">
+					<div class="col-tab-12 col-desk-12">
+						<iframe width="420" height="315"
+							src="#{current_movie.movie.movie_trailer_path}"> </iframe>
+					</div>
 				</div>
-			</div>
 			</h:panelGroup>
-			<h:panelGroup rendered="#{current_movie.movie.movie_trailer_path eq null}">
-			<div class="row">
-				<div class="col-tab-12 col-desk-12">
-					<h:outputText value="No trailer currently available"></h:outputText>
+			<h:panelGroup
+				rendered="#{current_movie.movie.movie_trailer_path eq null}">
+				<div class="row">
+					<div class="col-tab-12 col-desk-12">
+						<h:outputText value="No trailer currently available"></h:outputText>
+					</div>
 				</div>
-			</div>
 			</h:panelGroup>
 		</div>
 	</ui:define>

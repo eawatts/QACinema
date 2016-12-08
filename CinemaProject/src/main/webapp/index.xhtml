@@ -19,8 +19,10 @@
 						<ui:repeat var="movie" value="#{movies.activeMovies}">
 							<li><h:form>
 									<p class="flex-caption">
-										<h:commandLink value="&#160;&#160;#{movie.name}" styleClass="caption-link"
-											action="#{movies.view(movie.id)}"><br/><br/>
+										<h:commandLink value="&#160;&#160;#{movie.name}"
+											styleClass="caption-link" action="#{movies.view(movie.id)}">
+											<br />
+											<br />
 											<h:graphicImage styleClass="slider-image"
 												value="Resources#{movie.movie_banner_filepath}"></h:graphicImage>
 
@@ -51,7 +53,36 @@
 											</h:graphicImage>
 											<br />
 											<div class="index-text">
-												<h:outputText value="#{movie.name}"></h:outputText>
+												<h:outputText styleClass="index-text" value="#{movie.name}&#160;"></h:outputText>
+												<h:panelGroup
+													rendered="#{movie.age_rating eq 1}">
+													<h:graphicImage styleClass="rating"
+														value="Resources/images/age_rating/universal.png"></h:graphicImage>
+												</h:panelGroup>
+												<h:panelGroup
+													rendered="#{movie.age_rating eq 2}">
+													<h:graphicImage styleClass="rating"
+														value="Resources/images/age_rating/pg.png"></h:graphicImage>
+												</h:panelGroup>
+												<h:panelGroup
+													rendered="#{movie.age_rating eq 3}">
+													<h:graphicImage styleClass="rating"
+														value="Resources/images/age_rating/twelve.png"></h:graphicImage>
+												</h:panelGroup>
+												<h:panelGroup
+													rendered="#{movie.age_rating eq 4}">
+													<h:graphicImage styleClass="rating"
+														value="Resources/images/age_rating/fifteen.png"></h:graphicImage>
+												</h:panelGroup>
+												<h:panelGroup
+													rendered="#{movie.age_rating eq 5}">
+													<h:graphicImage styleClass="rating"
+														value="Resources/images/age_rating/eighteen.png"></h:graphicImage>
+												</h:panelGroup>
+												<h:panelGroup
+													rendered="#{movie.age_rating eq null}">
+													<h:outputText value="To be rated"></h:outputText>
+												</h:panelGroup>
 											</div>
 										</h:commandLink>
 									</div>

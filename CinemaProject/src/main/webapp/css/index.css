@@ -8,11 +8,20 @@
     display: block;
     margin: 0 auto;
 }
+.index-image:hover{
+	max-width: 325px; 
+    max-height: 325px;
+}
 .index-text{
 	color: black;
 	text-align: center;
 	font-size: 120%;
-	text-decoration: none;
+}
+.rating{
+	height: auto; 
+    width: auto; 
+    max-width: 30px; 
+    max-height: 30px;
 }
 #title{
 	margin-left: 5%;
@@ -22,10 +31,6 @@
     width: auto; 
     max-width: 1400px; 
     max-height: 400px;
-}
-.index-image:hover{
-	max-width: 350px; 
-    max-height: 350px;
 }
 .carousel_row{
 	padding-left:0px;
@@ -85,4 +90,7 @@
 .caption-link{
 	text-decoration: none;
 	color: white;
+}
+a{
+	text-decoration: none;
 }
